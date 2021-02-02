@@ -1,0 +1,10 @@
+.header .container {
+  padding: 40px;
+}
+.header .container .header-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5125ad;
+}
+
+/*# sourceMappingURL=header.css.map */
