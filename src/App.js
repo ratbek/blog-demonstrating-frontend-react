@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from 'react-router-dom'
 
 import './App.css';
@@ -22,7 +21,18 @@ function App() {
             render={() => (
               <Body>
                 {/* <MainImage /> */}
-                {/* <PostList /> */}
+                {/* <PostList newest={true} /> */}
+              </Body>
+            )}
+          />
+        </Switch>
+        <Switch>
+          <Route 
+            exact path="/posts" 
+            render={() => (
+              <Body>
+                {/* <PostList popular={true} /> */}
+                {/* <PostList newest={true} /> */}
               </Body>
             )}
           />

@@ -1,0 +1,17 @@
+.nav-main-menu {
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+
+  ul {
+    display: flex;
+
+    li {
+      padding: 0px 20px;
+
+      a.active {
+        color: rgb(255, 81, 0);
+      }
+    }
+  }
+}
