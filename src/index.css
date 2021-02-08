@@ -18,6 +18,19 @@ code {
   box-sizing: border-box;
 }
 
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: #2d008a;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #ff5100;
+}
+
 .header .container {
   padding: 40px;
 }
@@ -34,6 +47,21 @@ code {
 .footer {
   margin-top: auto;
   background-color: #381484;
+}
+
+.nav-main-menu {
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+.nav-main-menu ul {
+  display: flex;
+}
+.nav-main-menu ul li {
+  padding: 0px 20px;
+}
+.nav-main-menu ul li a.active {
+  color: #ff5100;
 }
 
 /*# sourceMappingURL=index.css.map */
