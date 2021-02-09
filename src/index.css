@@ -23,12 +23,17 @@ ul, ol {
 }
 
 a {
-  color: #2d008a;
+  color: #4e2f6b;
   text-decoration: none;
 }
 
 a:hover, a:active {
   color: #ff5100;
+}
+
+.main-image {
+  height: 444px;
+  overflow: clip;
 }
 
 .header .container {
@@ -37,7 +42,7 @@ a:hover, a:active {
 .header .container .header-title {
   font-size: 30px;
   font-weight: bold;
-  color: #5125ad;
+  color: #4e2f6be3;
 }
 
 .main-image img {
@@ -46,7 +51,7 @@ a:hover, a:active {
 
 .footer {
   margin-top: auto;
-  background-color: #381484;
+  background-color: #4e2f6b;
 }
 
 .nav-main-menu {
