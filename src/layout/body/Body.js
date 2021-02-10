@@ -2,11 +2,11 @@ import React from 'react'
 
 const Body = (props) => {
   return (
-    <div className="body">
+    <section className="body">
       <div className="container">
         {props.children}
       </div>
-    </div>
+    </section>
   )
 }
 

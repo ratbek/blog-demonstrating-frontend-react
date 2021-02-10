@@ -5,11 +5,11 @@ import {
   Route,
 } from 'react-router-dom'
 
-import './App.css';
 import Header from './layout/header/Header';
 import Body from './layout/body/Body';
 import Footer from './layout/footer/Footer';
 import MainImage from './features/MainImage';
+import PostsList from './features/posts/PostsList';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
               <React.Fragment>
                 <MainImage />
                 <Body>
-                  {/* <PostList newest={true} /> */}
+                  <PostsList newest={true} />
                 </Body>
               </React.Fragment>
             )}

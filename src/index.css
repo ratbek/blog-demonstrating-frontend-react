@@ -10,8 +10,7 @@ code {
 }
 
 .container {
-  max-width: 1100px;
-  border: 1px solid;
+  max-width: 1000px;
   display: flex;
   margin: auto;
   padding: 10px;
@@ -37,7 +36,7 @@ a:hover, a:active {
 }
 
 .header .container {
-  padding: 40px;
+  padding: 40px 0;
 }
 .header .container .header-title {
   font-size: 30px;
@@ -67,6 +66,31 @@ a:hover, a:active {
 }
 .nav-main-menu ul li a.active {
   color: #ff5100;
+}
+
+.posts-list .post-item {
+  display: flex;
+  margin-bottom: 50px;
+}
+.posts-list .post-item .image-container img {
+  width: 450px;
+}
+.posts-list .post-item .text-container {
+  padding-left: 40px;
+}
+.posts-list .post-item .text-container .category {
+  background-color: #4e2f6b;
+  display: inline-flex;
+}
+.posts-list .post-item .text-container .category:hover, .posts-list .post-item .text-container .category:active {
+  background-color: #ff5100;
+}
+.posts-list .post-item .text-container .category a {
+  padding: 7px 10px;
+  color: #f4bea9;
+}
+.posts-list .post-item .text-container .category a:hover, .posts-list .post-item .text-container .category a:active {
+  color: #4e2f6b;
 }
 
 /*# sourceMappingURL=index.css.map */
