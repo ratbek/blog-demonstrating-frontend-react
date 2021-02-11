@@ -10,10 +10,13 @@ import Body from './layout/body/Body';
 import Footer from './layout/footer/Footer';
 import MainImage from './features/MainImage';
 import PostsList from './features/posts/PostsList';
+import SinglePost from './features/posts/SinglePost';
+import ScrollToTop from './features/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header />
         <Switch>
@@ -43,9 +46,9 @@ function App() {
         <Switch>
           <Route 
             exact path="/posts/:postId" 
-            render={() => (
+            render={({match}) => (
               <Body>
-                {/* <SinglePost /> */}
+                <SinglePost match={match} />
               </Body>
             )}
           />

@@ -35,11 +35,29 @@ a:hover, a:active {
   overflow: clip;
 }
 
+button, .button {
+  border: none;
+  padding: unset;
+  font-size: 15px;
+  background-color: #4e2f6b;
+  display: inline-flex;
+}
+button:hover, button:active, .button:hover, .button:active {
+  background-color: #542282c4;
+}
+button a, .button a {
+  padding: 7px 10px;
+  color: #f4bea9;
+}
+button a:hover, button a:active, .button a:hover, .button a:active {
+  color: #ff733c;
+}
+
 .header .container {
-  padding: 40px 0;
+  padding: 40px 10px;
 }
 .header .container .header-title {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: bold;
   color: #4e2f6be3;
 }
@@ -78,19 +96,12 @@ a:hover, a:active {
 .posts-list .post-item .text-container {
   padding-left: 40px;
 }
-.posts-list .post-item .text-container .category {
-  background-color: #4e2f6b;
-  display: inline-flex;
-}
-.posts-list .post-item .text-container .category:hover, .posts-list .post-item .text-container .category:active {
-  background-color: #ff5100;
-}
-.posts-list .post-item .text-container .category a {
-  padding: 7px 10px;
-  color: #f4bea9;
-}
-.posts-list .post-item .text-container .category a:hover, .posts-list .post-item .text-container .category a:active {
-  color: #4e2f6b;
+
+.post .post-image {
+  float: left;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  max-width: 500px;
 }
 
 /*# sourceMappingURL=index.css.map */

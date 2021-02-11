@@ -37,3 +37,24 @@ a:hover, a:active {
   height: 444px;
   overflow: clip;
 }
+
+button, .button {
+  border: none;
+  padding: unset;
+  font-size: 15px;
+  background-color: #4e2f6b;
+  display: inline-flex;
+
+  &:hover, &:active {
+    background-color:#542282c4
+  }
+
+  a {
+    padding: 7px 10px;
+    color: #f4bea9;
+  }
+
+  a:hover, a:active {
+    color: #ff733c
+  }
+}
