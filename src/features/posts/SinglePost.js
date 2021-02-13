@@ -22,7 +22,7 @@ const SinglePost = ({ match }) => {
         <h2>{post.title}</h2>
         <img className="post-image" src={post.image_path} alt={post.image_name} />
         <p className="post-content">{post.content}</p>
-        <button>
+        <button className="button">
           <Link to={`/editPost/${post.id}`}>
             Edit Post
           </Link>

@@ -30,8 +30,20 @@ const initialState = postsAdapter.getInitialState({
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
-  reducers: {}
-})
+  reducers: {
+    postUpdated(state, action) {
+      const { id, title, content } = action.payload
+      const existingPost = state.entities[id]
+      // const existingPost = state.posts.find(post => post.id === id)
+      if (existingPost) {
+        existingPost.title = title
+        existingPost.content = content
+      }
+    },
+  }
+});
+
+export const { postUpdated } = postsSlice.actions;
 
 export const {
   selectAll: selectAllPosts,

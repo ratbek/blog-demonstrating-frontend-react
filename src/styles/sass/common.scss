@@ -38,15 +38,27 @@ a:hover, a:active {
   overflow: clip;
 }
 
-button, .button {
+button {
   border: none;
-  padding: unset;
+  padding: 7px 10px;
   font-size: 15px;
+  background-color: #4e2f6b;
+  color: #f4bea9;
+  cursor: pointer;
+
+  &:hover, &:active {
+    background-color:#542282c4;
+    color: #ff733c;
+  }
+}
+
+.button {
+  padding: unset;
   background-color: #4e2f6b;
   display: inline-flex;
 
   &:hover, &:active {
-    background-color:#542282c4
+    background-color:#542282c4;
   }
 
   a {
@@ -57,4 +69,27 @@ button, .button {
   a:hover, a:active {
     color: #ff733c
   }
+}
+
+.row {
+  padding-bottom: 20px;
+}
+
+label {
+  display: block;
+}
+
+[type=text], textarea {
+  display: block;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.error-message {
+  color: red;
+  visibility: hidden;
+  font-size: 13px;
 }
