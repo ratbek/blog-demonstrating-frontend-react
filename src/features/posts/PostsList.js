@@ -15,9 +15,11 @@ const PostsList = () => {
         <img src={post.image_path} alt={post.image_name}/>
       </div>
       <div className="text-container">
-        <button className="category"><Link to={post.category}>{post.category}</Link></button>
-        <Link to={`/posts/${post.id}`}><h3>{post.title}</h3></Link>
-        <p className="post-content">{post.content.substring(0, 100)}...</p>
+        <button className="button category"><Link to={post.category}>{post.category}</Link></button>
+        <Link to={`/posts/${post.id}`}>
+          <h3>{post.title}</h3>
+        </Link>
+        <p className="post-content">{post.content.substring(0, 500)}...</p>
       </div>
     </article>
   ))

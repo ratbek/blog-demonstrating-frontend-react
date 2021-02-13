@@ -12,6 +12,7 @@ import MainImage from './features/MainImage';
 import PostsList from './features/posts/PostsList';
 import SinglePost from './features/posts/SinglePost';
 import ScrollToTop from './features/ScrollToTop';
+import EditPostForm from './features/posts/EditPostForm';
 
 function App() {
   return (
@@ -56,9 +57,9 @@ function App() {
         <Switch>
           <Route 
             exact path="/editPost/:postId"
-            render={() => (
+            render={({match}) => (
               <Body>
-                {/* <EditPostForm /> */}
+                <EditPostForm match={match}/>
               </Body>
             )}
           />
