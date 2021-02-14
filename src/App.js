@@ -38,8 +38,8 @@ function App() {
             exact path="/posts" 
             render={() => (
               <Body>
-                {/* <PostList popular={true} /> */}
-                {/* <PostList newest={true} /> */}
+                <PostsList popular={true} />
+                <PostsList latest={true} />
               </Body>
             )}
           />

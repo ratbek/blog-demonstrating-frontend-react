@@ -1,5 +1,12 @@
 .posts-list {
 
+  h1 {
+    font-size: 22px;
+    background-color: #ea6666;
+    padding: 7px 20px;
+    color: lemonchiffon;
+  }
+
   .post-item {
     display: flex;
     margin-bottom: 50px;
@@ -15,6 +22,6 @@
     .button.category a {
       font-size: 13px;
       padding: 5px 10px;
-  }
+   }
   }
 }

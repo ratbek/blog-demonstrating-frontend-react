@@ -3,11 +3,13 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { selectAllPosts } from './postsSlice'
 
-const PostsList = () => {
-  
-  // const posts = useSelector(state => state.posts.entities);
+const PostsList = ({latest, popular}) => {
   const posts = useSelector(selectAllPosts)
 
+  let postsTitle = 'Latest posts';
+  if (popular) {
+    postsTitle = 'Popular posts';
+  }
 
   const renderedPosts = posts.map(post => (
     <article className="post-item" key={post.id}>
@@ -26,7 +28,7 @@ const PostsList = () => {
 
   return (
     <section className="posts-list">
-      <h2>Latest Posts</h2>
+      <h1>{postsTitle}</h1>
       {renderedPosts}
     </section>
   )

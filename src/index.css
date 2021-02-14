@@ -11,7 +11,7 @@ code {
 
 .container {
   max-width: 1000px;
-  display: flex;
+  display: block;
   margin: auto;
   padding: 10px;
   box-sizing: border-box;
@@ -89,6 +89,7 @@ label {
 
 .header .container {
   padding: 40px 10px;
+  display: flex;
 }
 .header .container .header-title {
   font-size: 36px;
@@ -120,6 +121,12 @@ label {
   color: #ff5100;
 }
 
+.posts-list h1 {
+  font-size: 22px;
+  background-color: #ea6666;
+  padding: 7px 20px;
+  color: lemonchiffon;
+}
 .posts-list .post-item {
   display: flex;
   margin-bottom: 50px;

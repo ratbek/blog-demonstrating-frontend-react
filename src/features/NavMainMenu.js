@@ -20,9 +20,11 @@ const NavMainMenu = () => {
     } else {
       active = splittedUrl[1] === key ? 'active' : '';
     }
+    let url = key === "/" ? "/" : "/" + key; 
+
     return (
       <li key={key}> 
-        <Link className={"main-menu-link " + active} to={key} onClick={makeActive}>{urlItems[key]}</Link>
+        <Link className={"main-menu-link " + active} to={url} onClick={makeActive}>{urlItems[key]}</Link>
       </li>
     )
   });
