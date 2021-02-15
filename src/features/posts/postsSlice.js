@@ -4,6 +4,7 @@ const entities = {
   1: { 
     id: '1', 
     title: 'First Post!',
+    date_created: '2021-02-14T20:32:00',
     category: 'Motivation',
     image_name: 'image-1',
     image_path: '/images/post_images/image-1.jpg',
@@ -12,6 +13,7 @@ const entities = {
   2: { 
     id: '2', 
     title: 'Second Post',
+    date_created: '2021-02-14T21:33:00',
     category: 'Travel',
     image_name: 'image-2',
     image_path: '/images/post_images/image-2.jpg',

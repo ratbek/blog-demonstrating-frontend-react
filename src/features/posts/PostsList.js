@@ -1,10 +1,11 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectAllPosts } from './postsSlice'
+import { selectAllPosts } from './postsSlice';
+import { TimeAgo } from './TimeAgo';
 
 const PostsList = ({latest, popular}) => {
-  const posts = useSelector(selectAllPosts)
+  const posts = useSelector(selectAllPosts);
 
   let postsTitle = 'Latest posts';
   if (popular) {
@@ -21,6 +22,9 @@ const PostsList = ({latest, popular}) => {
         <Link to={`/posts/${post.id}`}>
           <h3>{post.title}</h3>
         </Link>
+        <div className="time-ago-wrapper">
+          <TimeAgo timestamp={post.date_created} />
+        </div>
         <p className="post-content">{post.content.substring(0, 500)}...</p>
       </div>
     </article>
