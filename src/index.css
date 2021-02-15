@@ -87,6 +87,11 @@ label {
   font-size: 13px;
 }
 
+.time-ago-wrapper {
+  font-size: 14px;
+  color: darksalmon;
+}
+
 .header .container {
   padding: 40px 10px;
   display: flex;
@@ -142,7 +147,11 @@ label {
   padding: 5px 10px;
 }
 
-.post .post-image {
+.single-post .time-ago-wrapper {
+  margin-top: -5px;
+  margin-bottom: 16px;
+}
+.single-post .post-image {
   float: left;
   padding-right: 30px;
   padding-bottom: 30px;
