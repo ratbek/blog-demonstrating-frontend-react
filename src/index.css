@@ -64,6 +64,10 @@ button:hover, button:active {
   color: #ff733c;
 }
 
+form {
+  max-width: 700px;
+}
+
 .row {
   padding-bottom: 20px;
 }
@@ -72,7 +76,7 @@ label {
   display: block;
 }
 
-[type=text], textarea {
+[type=text], textarea, select {
   display: block;
   border: 1px solid #dedede;
   border-radius: 4px;
@@ -156,10 +160,6 @@ label {
   padding-right: 30px;
   padding-bottom: 30px;
   max-width: 500px;
-}
-
-.edit-post-form {
-  width: 500px;
 }
 
 /*# sourceMappingURL=index.css.map */

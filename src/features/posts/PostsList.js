@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectAllPosts } from './postsSlice';
 import { TimeAgo } from './TimeAgo';
+import capitalize from '../../helpers/capitalize';
 
 const PostsList = ({latest, popular}) => {
   const posts = useSelector(selectAllPosts);
@@ -18,7 +19,7 @@ const PostsList = ({latest, popular}) => {
         <img src={post.image_path} alt={post.image_name}/>
       </div>
       <div className="text-container">
-        <button className="button category"><Link to={post.category}>{post.category}</Link></button>
+        <button className="button category"><Link to={post.category}>{capitalize(post.category)}</Link></button>
         <Link to={`/posts/${post.id}`}>
           <h3>{post.title}</h3>
         </Link>
