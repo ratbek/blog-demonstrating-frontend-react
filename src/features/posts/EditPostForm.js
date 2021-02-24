@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { postUpdated, selectPostById } from './postsSlice';
 import FormErrorMessage from '../../helpers/FormErrorMessage';
+import categoryOptions from '../../helpers/categoryOptions';
 
 const EditPostForm = ({ match }) => {
   const { postId } = match.params;
@@ -10,15 +11,21 @@ const EditPostForm = ({ match }) => {
   const post = useSelector(state => selectPostById(state, postId));
 
   const [title, setTitle] = useState(post.title);
+  const [category, setCategory] = useState(post.category);
   const [content, setContent] = useState(post.content);
 
   const dispatch = useDispatch();
+  const canSave = [title, category, content].every(Boolean);
   const history = useHistory();
 
   const onTitleChanged = e => {
     setTitle(e.target.value);
     let postTitle = document.getElementById('post_title');
     FormErrorMessage.hideErrorMessageFor(postTitle, '#dedede');
+  };
+
+  const onCategoryChanged = e => {
+    setCategory(e.target.value);
   };
 
   const onContentChanged = e => {
@@ -28,7 +35,7 @@ const EditPostForm = ({ match }) => {
   }
 
   const onSavePostClicked = (e) => {
-    if (title && content) {
+    if (canSave) {
       dispatch(postUpdated({ id: postId, title, content }));
       history.push(`/posts/${postId}`);
     } 
@@ -43,6 +50,8 @@ const EditPostForm = ({ match }) => {
       }
     }
   };
+
+  const categoriesOptions = categoryOptions();
 
   return (
     <section className="edit-post-form">
@@ -59,6 +68,13 @@ const EditPostForm = ({ match }) => {
             onChange={onTitleChanged}
           />
           <span className="error-message">Post Title should not be empty</span>
+        </div>
+        <div className="row">
+          <label htmlFor="category">Category:</label>
+          <select id="category" value={category} onChange={onCategoryChanged}>
+            <option></option>
+            {categoriesOptions}
+          </select>
         </div>
         <div className="row">
           <label htmlFor="postContent">Content:</label>

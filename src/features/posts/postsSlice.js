@@ -5,7 +5,7 @@ const entities = {
     id: '1', 
     title: 'First Post!',
     date_created: '2021-02-14T20:32:00',
-    category: 'Motivation',
+    category: "travel",
     image_name: 'image-1',
     image_path: '/images/post_images/image-1.jpg',
     content: 'Hello! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula nisi nec metus pulvinar, nec faucibus risus lacinia. Donec sed velit risus. Proin nec magna posuere, tristique est tempor, porttitor purus. Proin bibendum non massa et pretium. Pellentesque id tristique arcu, vel vehicula augue. Duis sodales, sem sed ultricies ultrices, purus enim pellentesque neque, lacinia suscipit massa sem eget dolor. In malesuada libero ex, et volutpat ligula fringilla porttitor. Etiam egestas, lacus vestibulum convallis elementum, nisl erat imperdiet eros, eu efficitur lorem neque sed tellus.'
@@ -14,7 +14,7 @@ const entities = {
     id: '2', 
     title: 'Second Post',
     date_created: '2021-02-14T21:33:00',
-    category: 'Travel',
+    category: "motivation",
     image_name: 'image-2',
     image_path: '/images/post_images/image-2.jpg',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula nisi nec metus pulvinar, nec faucibus risus lacinia. Donec sed velit risus. Proin nec magna posuere, tristique est tempor, porttitor purus. Proin bibendum non massa et pretium. Pellentesque id tristique arcu, vel vehicula augue. Duis sodales, sem sed ultricies ultrices, purus enim pellentesque neque, lacinia suscipit massa sem eget dolor. In malesuada libero ex, et volutpat ligula fringilla porttitor. Etiam egestas, lacus vestibulum convallis elementum, nisl erat imperdiet eros, eu efficitur lorem neque sed tellus.' 
@@ -41,10 +41,28 @@ const postsSlice = createSlice({
         existingPost.content = content
       }
     },
+    postAdded: {
+      reducer(state, action) {
+        const { id, title, category, date_created, content } = action.payload;
+        state.entities[id] = {id, title, category, date_created, content};
+        state.ids.push(id);
+      },
+      prepare(id, title, category, content) {
+        return {
+          payload: {
+            id,
+            date_created: new Date().toISOString(),
+            title,
+            category,
+            content,
+          }
+        }
+      }
+    },
   }
 });
 
-export const { postUpdated } = postsSlice.actions;
+export const { postUpdated, postAdded } = postsSlice.actions;
 
 export const {
   selectAll: selectAllPosts,

@@ -1,4 +1,3 @@
-
 class FormErrorMessage {
   
   static displayErrorMessageFor(inputElement, borderColor) {

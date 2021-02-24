@@ -13,6 +13,7 @@ import PostsList from './features/posts/PostsList';
 import SinglePost from './features/posts/SinglePost';
 import ScrollToTop from './features/ScrollToTop';
 import EditPostForm from './features/posts/EditPostForm';
+import AddPostForm from './features/posts/AddPostForm';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
             render={() => (
               <React.Fragment>
                 <MainImage />
-                <Body>
+                <Body inContainer={true}>
                   <PostsList newest={true} />
                 </Body>
               </React.Fragment>
@@ -37,7 +38,7 @@ function App() {
           <Route 
             exact path="/posts" 
             render={() => (
-              <Body>
+              <Body inContainer={true}>
                 <PostsList popular={true} />
                 <PostsList latest={true} />
               </Body>
@@ -48,7 +49,7 @@ function App() {
           <Route 
             exact path="/posts/:postId" 
             render={({match}) => (
-              <Body>
+              <Body inContainer={true}>
                 <SinglePost match={match} />
               </Body>
             )}
@@ -56,9 +57,19 @@ function App() {
         </Switch>
         <Switch>
           <Route 
-            exact path="/editPost/:postId"
+            exact path="/add-post"
             render={({match}) => (
-              <Body>
+              <Body inContainer={true}>
+                <AddPostForm match={match}/>
+              </Body>
+            )}
+          />
+        </Switch>
+        <Switch>
+          <Route 
+            exact path="/edit-post/:postId"
+            render={({match}) => (
+              <Body inContainer={true}>
                 <EditPostForm match={match}/>
               </Body>
             )}
@@ -68,7 +79,7 @@ function App() {
           <Route 
             exact path="/registration"
             render={() => (
-              <Body>
+              <Body inContainer={true}>
                 {/* <RegistrationForm /> */}
               </Body>
             )}
@@ -78,7 +89,7 @@ function App() {
           <Route 
             exact path="/login"
             render={() => (
-              <Body>
+              <Body inContainer={true}>
                 {/* <LoginForm /> */}
               </Body>
             )}

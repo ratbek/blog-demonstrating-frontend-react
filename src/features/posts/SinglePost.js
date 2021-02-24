@@ -17,15 +17,20 @@ const SinglePost = ({ match }) => {
     )
   }
 
+  let image = '';
+  if (post.image_path) {
+    image = <img className="post-image" src={post.image_path} alt={post.image_name} />
+  }
+
   return (
     <section>
       <article className="single-post">
         <h2>{post.title}</h2>
         <div className="time-ago-wrapper"><TimeAgo timestamp={post.date_created} /></div>
-        <img className="post-image" src={post.image_path} alt={post.image_name} />
+        {image}
         <p className="post-content">{post.content}</p>
         <button className="button">
-          <Link to={`/editPost/${post.id}`}>
+          <Link to={`/edit-post/${post.id}`}>
             Edit Post
           </Link>
         </button>

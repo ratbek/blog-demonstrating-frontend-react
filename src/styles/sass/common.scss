@@ -71,6 +71,10 @@ button {
   }
 }
 
+form {
+  max-width: 700px;
+}
+
 .row {
   padding-bottom: 20px;
 }
@@ -79,7 +83,7 @@ label {
   display: block;
 }
 
-[type=text], textarea {
+[type=text], textarea, select {
   display: block;
   border: 1px solid #dedede;
   border-radius: 4px;
