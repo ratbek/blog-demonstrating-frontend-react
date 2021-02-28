@@ -29,11 +29,9 @@ const SinglePost = ({ match }) => {
         <div className="time-ago-wrapper"><TimeAgo timestamp={post.date_created} /></div>
         {image}
         <p className="post-content">{post.content}</p>
-        <button className="button">
-          <Link to={`/edit-post/${post.id}`}>
-            Edit Post
-          </Link>
-        </button>
+        <Link to={`/edit-post/${post.id}`}>
+          <button>Edit Post</button>
+        </Link>
       </article>
     </section>
   );

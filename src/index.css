@@ -47,14 +47,22 @@ button:hover, button:active {
   background-color: #542282c4;
   color: #ff733c;
 }
+button a {
+  color: #f4bea9;
+}
 
 .button {
-  padding: unset;
   background-color: #4e2f6b;
+  border: none;
   display: inline-flex;
+  color: #f4bea9;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 7px 10px;
 }
 .button:hover, .button:active {
   background-color: #542282c4;
+  color: #ff733c;
 }
 .button a {
   padding: 7px 10px;
@@ -83,11 +91,11 @@ label {
   width: 100%;
   padding: 10px;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 .error-message {
   color: red;
-  visibility: hidden;
   font-size: 13px;
 }
 
@@ -146,9 +154,9 @@ label {
 .posts-list .post-item .text-container {
   padding-left: 40px;
 }
-.posts-list .post-item .button.category a {
-  font-size: 13px;
+.posts-list .post-item a button.category {
   padding: 5px 10px;
+  font-size: 13px;
 }
 
 .single-post .time-ago-wrapper {

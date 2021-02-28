@@ -4,6 +4,9 @@ import { postAdded } from './postsSlice';
 import { unwrapResult, nanoid } from '@reduxjs/toolkit';
 import { useHistory } from 'react-router-dom';
 import categoryOptions from '../../helpers/categoryOptions';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import validationSchema from '../../validation-schemas/post-form-schema';
 
 const AddPostForm = () => {
   
@@ -12,14 +15,16 @@ const AddPostForm = () => {
   const [content, setContent] = useState('');
 
   const onTitleChanged = e => setTitle(e.target.value);
-  const onContentChanged = e => setContent(e.target.value);
   const onCategoryChanged = e => setCategory(e.target.value);
+  const onContentChanged = e => setContent(e.target.value);
   
   const dispatch = useDispatch();
-  const canSave = [title, category, content].every(Boolean);
   const history = useHistory();
 
-  const onSavePostClicked = () => {
+  const categoriesOptions = categoryOptions();
+  const canSave = [title, category, content].every(Boolean);
+
+  const onSubmit = () => {
     if (canSave) {
       try { 
         const post_id = nanoid();
@@ -34,12 +39,14 @@ const AddPostForm = () => {
     }
   }
 
-  const categoriesOptions = categoryOptions();
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(validationSchema)
+  });
   
   return (
     <section>
       <h2>Add a New Post</h2>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           <label htmlFor="postTitle">Post Title:</label>
           <input
@@ -49,14 +56,22 @@ const AddPostForm = () => {
             placeholder="What's on your mind?"
             value={title}
             onChange={onTitleChanged}
+            ref={register}
           />
+          <span className="error-message">{errors.postTitle?.message}</span>
         </div>
         <div className="row">
           <label htmlFor="category">Category:</label>
-          <select id="category" value={category} onChange={onCategoryChanged}>
-            <option></option>
-            {categoriesOptions}
+          <select 
+            id="category"　
+            name="category" 
+            value={category} 
+            onChange={onCategoryChanged} 
+            ref={register}>
+              <option></option>
+              {categoriesOptions}
           </select>
+          <span className="error-message">{errors.category?.message}</span>
         </div>
         <div className="row">
           <label htmlFor="postContent">Content:</label>
@@ -66,11 +81,11 @@ const AddPostForm = () => {
             value={content}
             rows="10"
             onChange={onContentChanged}
+            ref={register}
           />
+          <span className="error-message">{errors.postContent?.message}</span>
         </div>
-        <button type="button" onClick={onSavePostClicked}>
-          Save Post
-        </button>
+        <input className="button" type="submit" value="Save Post" />
       </form>
     </section>
   );
