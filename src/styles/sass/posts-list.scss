@@ -19,9 +19,11 @@
       padding-left: 40px;
     }
 
-    .button.category a {
-      font-size: 13px;
-      padding: 5px 10px;
-   }
+    a {
+      button.category {
+        padding: 5px 10px;
+        font-size: 13px;
+      }
+    }
   }
 }
